@@ -99,7 +99,7 @@ done
 # ===== 拉取 KSU 并设置版本号 =====
 if [[ "$KSU_BRANCH" == "y" ]]; then
   echo ">>> 拉取 SukiSU-Ultra 并设置版本..."
-  curl -LSs "https://raw.githubusercontent.com/ShirkNeko/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
+  curl -LSs "https://raw.githubusercontent.com/ShirkNeko/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-dev
   cd KernelSU
   KSU_VERSION_COUNT=$(git rev-list --count main)
   export KSUVER=$(expr $KSU_VERSION_COUNT + 10700)
