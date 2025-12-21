@@ -279,8 +279,8 @@ jobs:
             patch -p1 < 50_add_susfs_in_gki-${{ env.ANDROID_VERSION }}-${{ env.KERNEL_VERSION }}.patch || true
             patch -p1 < 69_hide_stuff.patch || true
             wget https://raw.githubusercontent.com/Anatdx/HymoFS/refs/heads/android14_6.1/patch/hymofs_with_susfs.patch
-patch -p1 -F 3 < hymofs_with_susfs.patch
-echo "CONFIG_HYMOFS=y" >> ./common/arch/arm64/configs/gki_defconfig
+            patch -p1 -F 3 < hymofs_with_susfs.patch
+            echo "CONFIG_HYMOFS=y" >> ./common/arch/arm64/configs/gki_defconfig
           elif [[ ${{ github.event.inputs.ksu_type }} == "ksunext" ]]; then
             echo "正在添加KernelSU Next补丁..."
             git clone https://gitlab.com/simonpunk/susfs4ksu.git -b gki-${{ env.ANDROID_VERSION }}-${{ env.KERNEL_VERSION }}
