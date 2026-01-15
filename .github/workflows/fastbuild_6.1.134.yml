@@ -601,7 +601,7 @@ jobs:
           cd common
           pwd
           ls
-          bash /home/kernel_workspace/Re-Kernel/Integrate/patches.sh
+          bash /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/kernel_workspace/Re-Kernel/Integrate/patches.sh
 
       - name: 启用内核级基带保护
         if: inputs.baseband_guard
