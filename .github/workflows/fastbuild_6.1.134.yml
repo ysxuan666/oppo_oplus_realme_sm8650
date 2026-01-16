@@ -601,6 +601,7 @@ jobs:
           bash /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/kernel_workspace/Re-Kernel/Integrate/patches.sh
           echo "CONFIG_REKERNEL=y" >> ./arch/arm64/configs/gki_defconfig
           echo "CONFIG_REKERNEL_NETWORK=y" >> ./arch/arm64/configs/gki_defconfig 
+          cd /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/
 
       - name: 启用内核级基带保护
         if: inputs.baseband_guard
