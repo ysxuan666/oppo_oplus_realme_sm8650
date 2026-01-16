@@ -597,8 +597,8 @@ jobs:
           cd kernel_workspace
           git clone https://github.com/Sakion-Team/Re-Kernel.git
           cd common
-          cp -Tr /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/kernel_workspace/Re-Kernel/Integrate/ /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/kernel_workspace/common/
-          bash patches.sh
+          cp -Tr /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/kernel_workspace/Re-Kernel/Integrate/rekernel /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/kernel_workspace/common/
+          bash /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/kernel_workspace/Re-Kernel/Integrate/patches.sh
           echo "CONFIG_REKERNEL=y" >> ./common/arch/arm64/configs/gki_defconfig
           echo "CONFIG_REKERNEL_NETWORK=y" >> ./common/arch/arm64/configs/gki_defconfig 
 
