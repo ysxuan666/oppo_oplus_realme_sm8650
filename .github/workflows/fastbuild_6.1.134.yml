@@ -595,8 +595,13 @@ jobs:
         run: |
           echo "正在启用Re-Kernel支持(用于与Freezer,NoActive等软件配合使用,提升冻结后台能力)…"
           cd kernel_workspace
+          git clone https://github.com/Sakion-Team/Re-Kernel.git
+          cd common
+          cp -Tr /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/kernel_workspace/Re-Kernel/Integrate/rekernel /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/kernel_workspace/common/
+          bash /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/kernel_workspace/Re-Kernel/Integrate/patches.sh
+          cd /home/runner/work/oppo_oplus_realme_sm8650/oppo_oplus_realme_sm8650/kernel_workspace
           echo "CONFIG_REKERNEL=y" >> ./common/arch/arm64/configs/gki_defconfig
-          #echo "CONFIG_REKERNEL_NETWORK=y" >> ./common/arch/arm64/configs/gki_defconfig 
+          echo "CONFIG_REKERNEL_NETWORK=y" >> ./common/arch/arm64/configs/gki_defconfig 
 
       - name: 启用内核级基带保护
         if: inputs.baseband_guard
